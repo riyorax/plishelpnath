@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js'></script> -->
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <style>
+        
+            #sample1 {
+                background-color: green;
+                width: 300px;
+                height: 300px;
+
+            }
+            #sample2 {
+                background-color: red;
+                width: 300px;
+                height: 300px;
+                
+            }
+        
+        </style>
+        
+    </head>
+    <body>
+        
+        <h1>Communicating from an Arduino to Node.js</h1>
+
+        <div id="sample1"></div>
+        
+        <script>
+            
+        // const socket = io("C:\\Users\\Maximilian\\Documents\\ITB\\TPB\\PRD\\tubes\\Tubes-PRD\\arduino-to-nodejs-main\\app.js");
+        const socket = io("C:\Users\Maximilian\Documents\ITB\TPB\PRD\tubes\Tubes-PRD\newpro");
+        socket.on('data', function(data) {
+            
+            console.log(data);
+
+            document.getElementById("sample1").innerHTML = data;
+            // document.getElementById('sample1').html(data).style.backgroundColor = "green"; 
+            // // if (data == 100){
+            //     document.getElementById('sample2'); 
+            // }else{
+            //     document.getElementById('sample2').style.backgroundcolor = "green"; 
+            // }
+            
+
+        });
+        
+        </script>
+        
+    </body>
+</html>
