@@ -1,17 +1,9 @@
 {
-  "name": "basic-socket",
-  "version": "0.0.1",
-  "description": "Communication between Arduino and HTML/JavaScript",
-  "dependencies": {
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "serialport": "^9.2.8",
-    "socket.io": "^2.5.0"
-  },
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name" : "basic-socket",
+    "version": "0.0.1",
+    "desc" : "test socket",
+    "dependencies":{
+        "serialport": "^11.0.0",
+        "socket.io": "^2.5.0"
+    }
 }
