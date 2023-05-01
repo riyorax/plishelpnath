@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parking Space Availability</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      .parking-space {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin: 20px;
+        float: left;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      #parking-space-1 {
+        background-color: green;
+      }
+
+      #parking-space-2 {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Parking Space Availability</h1>
+    <div id="parking-space-1" class="parking-space green"></div>
+    <div id="parking-space-2" class="parking-space red"></div>
+    <script>
+      const socket = io();
+      socket.on('data', function(data) {
+        if (data == 1) {
+          document.getElementById('parking-space-1').classList.add('green');
+          document.getElementById('parking-space-1').classList.remove('red');
+          document.getElementById('parking-space-2').classList.add('red');
+          document.getElementById('parking-space-2').classList.remove('green');
+        } else {
+          document.getElementById('parking-space-1').classList.add('red');
+          document.getElementById('parking-space-1').classList.remove('green');
+          document.getElementById('parking-space-2').classList.add('green');
+          document.getElementById('parking-space-2').classList.remove('red');
+        }
+      });
+    </script>
+  </body>
+</html>
